@@ -4,7 +4,6 @@ import "fmt"
 
 func main() {
 
-
 	var nbCase int64
 	if _, err := fmt.Scanln(&nbCase); err != nil {
 		panic(err)
@@ -21,12 +20,12 @@ func main() {
 		for _, char := range inputString {
 			delta := charBefore - char
 			if delta < 0 {
-				for i:=int32(0); i<(delta*-1); i++ {
+				for i := int32(0); i < (delta * -1); i++ {
 					nbOpen++
 					result = append(result, '(')
 				}
 			} else if delta > 0 {
-				for i:=int32(0); i<delta; i++ {
+				for i := int32(0); i < delta; i++ {
 					nbOpen--
 					result = append(result, ')')
 				}
@@ -36,12 +35,12 @@ func main() {
 		}
 
 		if nbOpen > 0 {
-			for i:=0; i<nbOpen; i++ {
+			for i := 0; i < nbOpen; i++ {
 				result = append(result, ')')
 			}
 		}
 
-		fmt.Printf("Case #%d: %s\n",caseId,string(result))
+		fmt.Printf("Case #%d: %s\n", caseId, string(result))
 
 	}
 }

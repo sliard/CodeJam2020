@@ -12,7 +12,6 @@ type activity struct {
 	parent rune
 }
 
-
 type sortByStart []*activity
 type sortByEnd []*activity
 
@@ -40,7 +39,6 @@ func (activities sortByEnd) Swap(i, j int) {
 	activities[i], activities[j] = activities[j], activities[i]
 }
 
-
 func main() {
 
 	var nbCase int64
@@ -63,7 +61,7 @@ func main() {
 			if _, err := fmt.Scanln(&startTime, &endTime); err != nil {
 				panic(err)
 			}
-			currentActivity := activity{index: rangeIndex, start:startTime, end:endTime, parent:' '}
+			currentActivity := activity{index: rangeIndex, start: startTime, end: endTime, parent: ' '}
 
 			allStartTime = append(allStartTime, &currentActivity)
 			allEndTime = append(allEndTime, &currentActivity)
@@ -78,7 +76,7 @@ func main() {
 
 		var result []rune
 
-		allParentAvailable := []rune {'C', 'J'}
+		allParentAvailable := []rune{'C', 'J'}
 
 		noSolution := false
 		for indexStart < len(allStartTime) {
@@ -96,14 +94,14 @@ func main() {
 			}
 		}
 
-		for acIndex:=0; acIndex<len(allActivities); acIndex++ {
-			result = append(result,allActivities[acIndex].parent)
+		for acIndex := 0; acIndex < len(allActivities); acIndex++ {
+			result = append(result, allActivities[acIndex].parent)
 		}
 
 		if noSolution {
-			fmt.Printf("Case #%d: IMPOSSIBLE\n",caseId)
+			fmt.Printf("Case #%d: IMPOSSIBLE\n", caseId)
 		} else {
-			fmt.Printf("Case #%d: %s\n",caseId,string(result))
+			fmt.Printf("Case #%d: %s\n", caseId, string(result))
 		}
 
 	}
