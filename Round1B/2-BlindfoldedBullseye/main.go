@@ -59,7 +59,7 @@ func resolv(a, b int) {
 	//fin y limit
 	// for top
 	minY := (*firstPoint).y
-	maxY := (*firstPoint).y + 2*a
+	maxY := (*firstPoint).y + 2*b
 	found := false
 	if maxY > MAX {
 		maxY = MAX
@@ -91,7 +91,7 @@ func resolv(a, b int) {
 	fmt.Fprintf(os.Stderr, "Limit TOP Y !!: %d \n", topY)
 
 	found = false
-	minY = (*firstPoint).y - 2*a
+	minY = (*firstPoint).y - 2*b
 	maxY = (*firstPoint).y
 	if minY < MIN {
 		minY = MIN
@@ -124,7 +124,7 @@ func resolv(a, b int) {
 
 	found = false
 	minX := (*firstPoint).x
-	maxX := (*firstPoint).x + 2*a
+	maxX := (*firstPoint).x + 2*b + 1
 	if maxX > MAX {
 		maxX = MAX
 		fmt.Printf("%d %d\n", maxX, (*firstPoint).y)
@@ -155,7 +155,7 @@ func resolv(a, b int) {
 	fmt.Fprintf(os.Stderr, "Limit Right X !!: %d \n", rightX)
 
 	found = false
-	minX = (*firstPoint).x - 2*a
+	minX = (*firstPoint).x - 2*b
 	maxX = (*firstPoint).x
 	if minX < MIN {
 		minX = MIN
